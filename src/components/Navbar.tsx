@@ -32,7 +32,7 @@ const Navbar = () => {
     <nav ref={navRef}>
       <div>
         <img src="/images/logo.svg" alt="logo" />
-        <p className='font-bold'>Aditya Raj 's Portfolio</p>
+        <p className='font-bold'>Aditya's Portfolio</p>
 
         <ul>
           {
