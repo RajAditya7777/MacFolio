@@ -132,20 +132,7 @@ const socials = [
     bg: "#0088cc",
     link: "https://t.me/adyraj7777",
   },
-  {
-    id: 4,
-    text: "LeetCode",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png",
-    bg: "#ffa116",
-    link: "https://leetcode.com/u/adyraj7777/",
-  },
-  {
-    id: 5,
-    text: "Codeforces",
-    icon: "https://cdn.iconscout.com/icon/free/png-256/free-code-forces-3628695-3029920.png",
-    bg: "#1f8acb",
-    link: "https://codeforces.com/profile/aditya.raj7777",
-  },
+
   {
     id: 6,
     text: "Call",
