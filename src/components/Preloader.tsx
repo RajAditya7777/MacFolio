@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface PreloaderProps {
     onFinish: () => void;
+    videoLoaded: boolean;
 }
 
-const Preloader = ({ onFinish }: PreloaderProps) => {
+const Preloader = ({ onFinish, videoLoaded }: PreloaderProps) => {
     const [hasClicked, setHasClicked] = useState(false);
+    const [minTimePassed, setMinTimePassed] = useState(false);
 
     const handleClick = () => {
         if (hasClicked) return;
@@ -16,11 +18,17 @@ const Preloader = ({ onFinish }: PreloaderProps) => {
         audio.volume = 0.5;
         audio.play().catch(e => console.error("Audio play failed", e));
 
-        // Match the animation duration (2s) plus a small buffer
+        // Ensure at least 2 seconds of loading animation
         setTimeout(() => {
-            onFinish();
+            setMinTimePassed(true);
         }, 2200);
     };
+
+    useEffect(() => {
+        if (hasClicked && minTimePassed && videoLoaded) {
+            onFinish();
+        }
+    }, [hasClicked, minTimePassed, videoLoaded, onFinish]);
 
     return (
         <motion.div
